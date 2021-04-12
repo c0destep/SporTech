@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/app.css">
+    <title>Login | SportTech</title>
+    <style>
+        .box-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            background: #040404;
+            overflow: hidden;
+        }
+
+        .box-login {
+            width: 80vw;
+            height: 95vh;
+            min-width: 275px;
+            max-width: 720px;
+            border: 3px solid rgba(255, 255, 255, .02);
+            box-shadow:
+                -9px -9px 16px rgba(255, 255, 255, .01),
+                9px 9px 16px rgba(0, 0, 0, 0.6);
+            background: #040404d0;
+            border-radius: 20px;
+            color: rgba(255, 255, 255, .8);
+        }
+
+        .box-login .box-header {
+            user-select: none;
+            text-align: center;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1rem;
+            padding: 1.5rem;
+            /* color: #202020; */
+            color: rgba(255, 255, 255, .5);
+            text-shadow:
+                -1px -1px 1px #111,
+                2px 2px 1px #040404d0;
+        }
+
+        .box-login .box-body {
+            padding: 1.5rem;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .box-login .box-body .form-control {
+            margin: 1.5rem 0;
+        }
+
+        .box-login .box-body label {
+            font-size: 1rem;
+            margin-left: .3rem;
+            letter-spacing: .1rem;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .box-login .box-body input {
+            margin: .5rem 0;
+            width: 100%;
+            height: 3rem;
+            padding: 1rem;
+            border-radius: 5px;
+            outline: none;
+            color: rgba(255, 255, 255, .3);
+            border: 3px solid rgba(255, 255, 255, .02);
+            box-shadow:
+                -9px -9px 16px rgba(255, 255, 255, .01),
+                9px 9px 16px rgba(0, 0, 0, 0.6);
+            background: #040404d0;
+            font-size: .75rem;
+        }
+
+        .box-login .box-body input:focus {
+            border: 3px solid rgba(255, 255, 255, .8);
+        }
+
+        .box-login .box-body .forget-password {
+            text-decoration: none;
+            color: rgba(255, 255, 255, .2);
+            letter-spacing: .1rem;
+            margin-left: .3rem;
+            font-style: italic;
+        }
+
+        .box-login .box-body .forget-password:hover {
+            color: rgba(255, 255, 255, .8);
+        }
+
+        .box-login .box-body .btn {
+            width: 25%;
+            margin: 0 auto;
+            padding: .5rem .75rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            outline: none;
+            color: rgba(255, 255, 255, .3);
+            border: 3px solid rgba(255, 255, 255, .02);
+            box-shadow:
+                -9px -9px 16px rgba(255, 255, 255, .01),
+                9px 9px 16px rgba(0, 0, 0, 0.6);
+            background: #040404d0;
+        }
+
+        .box-login .box-body .btn:hover {
+            border: 3px solid rgba(255, 255, 255, .8);
+            color: rgba(255, 255, 255, .8);
+        }
+
+        .box-login .box-body .btn:active,
+        .box-login .box-body .btn:focus {
+            border: 3px solid rgba(255, 255, 255, .8);
+            color: rgba(255, 255, 255, .8);
+        }
+
+        .box-login .box-footer {
+            padding: 1.5rem;
+        }
+
+        @media (max-width: 275px) {
+            .box-login {
+                width: 80vw;
+                height: 80vh;
+                padding: 1rem;
+            }
+
+            .box-login .box-header {
+                font-size: 1.75rem;
+                letter-spacing: .5rem;
+            }
+
+            .box-login .box-body .form-control {
+                margin-bottom: 1rem;
+            }
+
+            .box-login .box-body label {
+                font-size: 1rem;
+            }
+
+            .box-login .box-body input {
+                margin: .5rem 0;
+            }
+
+            .box-login .box-body .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .box-login {
+                width: 80vw;
+                height: 80vh;
+                padding: 1rem;
+            }
+
+            .box-login .box-header {
+                font-size: 1.75rem;
+                letter-spacing: .5rem;
+            }
+
+            .box-login .box-body .form-control {
+                margin-bottom: 1rem;
+            }
+
+            .box-login .box-body .btn {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 480px) {
+            .box-login {
+                width: 80vw;
+                height: 80vh;
+                padding: 1rem;
+            }
+
+            .box-login .box-header {
+                font-size: 2rem;
+                letter-spacing: 1rem;
+            }
+
+            .box-login .box-body .form-control {
+                margin-bottom: 1rem;
+            }
+
+            .box-login .box-body .btn {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 720px) {
+            .box-login {
+                width: 80vw;
+                height: 80vh;
+                padding: 1rem;
+            }
+
+            .box-login .box-header {
+                font-size: 3rem;
+                letter-spacing: 1rem;
+            }
+
+            .box-login .box-body .form-control {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+
+            .box-container {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                align-items: center;
+                background: #040404;
+                overflow: hidden;
+            }
+
+            .box-login {
+                width: 80vw;
+                height: 95vh;
+                min-width: 275px;
+                max-width: 720px;
+                border: 3px solid rgba(255, 255, 255, .02);
+                box-shadow:
+                    -9px -9px 16px rgba(255, 255, 255, .01),
+                    9px 9px 16px rgba(0, 0, 0, 0.6);
+                background: #040404d0;
+                border-radius: 20px;
+                color: rgba(255, 255, 255, .8);
+            }
+
+            .box-login .box-header {
+                user-select: none;
+                text-align: center;
+                font-size: 3rem;
+                text-transform: uppercase;
+                letter-spacing: 1rem;
+                padding: 1.5rem;
+                color: rgba(255, 255, 255, .5);
+                text-shadow:
+                    -1px -1px 1px #111,
+                    2px 2px 1px #040404d0;
+            }
+
+            .box-login .box-body {
+                padding: 1.5rem;
+                width: 100%;
+                display: inline-block;
+            }
+
+            .box-login .box-body .form-control {
+                margin: 1.5rem 0;
+            }
+
+            .box-login .box-body label {
+                font-size: 1rem;
+                margin-left: .3rem;
+                letter-spacing: .1rem;
+                color: rgba(255, 255, 255, .75);
+            }
+
+            .box-login .box-body input {
+                margin: .5rem 0;
+                width: 100%;
+                height: 3rem;
+                padding: 1rem;
+                border-radius: 5px;
+                outline: none;
+                color: rgba(255, 255, 255, .3);
+                border: 3px solid rgba(255, 255, 255, .02);
+                box-shadow:
+                    -9px -9px 16px rgba(255, 255, 255, .01),
+                    9px 9px 16px rgba(0, 0, 0, 0.6);
+                background: #040404d0;
+                font-size: .75rem;
+            }
+
+            .box-login .box-body input:focus {
+                border: 3px solid rgba(255, 255, 255, .8);
+            }
+
+            .box-login .box-body .forget-password {
+                text-decoration: none;
+                color: rgba(255, 255, 255, .2);
+                letter-spacing: .1rem;
+                margin-left: .3rem;
+                font-style: italic;
+            }
+
+            .box-login .box-body .forget-password:hover {
+                color: rgba(255, 255, 255, .8);
+            }
+
+            .box-login .box-body .btn {
+                width: 25%;
+                margin: 0 auto;
+                padding: .5rem .75rem;
+                font-size: 1rem;
+                border-radius: 5px;
+                outline: none;
+                color: rgba(255, 255, 255, .3);
+                border: 3px solid rgba(255, 255, 255, .02);
+                box-shadow:
+                    -9px -9px 16px rgba(255, 255, 255, .01),
+                    9px 9px 16px rgba(0, 0, 0, 0.6);
+                background: #040404d0;
+            }
+
+            .box-login .box-body .btn:hover {
+                border: 3px solid rgba(255, 255, 255, .8);
+                color: rgba(255, 255, 255, .8);
+            }
+
+            .box-login .box-body .btn:active,
+            .box-login .box-body .btn:focus {
+                border: 3px solid rgba(255, 255, 255, .8);
+                color: rgba(255, 255, 255, .8);
+            }
+
+            .box-login .box-footer {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-container">
+        <div class="box-login">
+            <h2 class="box-header">SportTech</h2>
+            <div class="box-body">
+                <!-- <form class="form" action="" method="get"> -->
+                    <div class="form-control">
+                        <label for="login">Login</label>
+                        <input type="text" name="login" id="login" placeholder="Username">
+                    </div>
+                    <div class="form-control">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-control">
+                        <a class="forget-password" href="#">Forget password</a>
+                    </div>
+                    <div class="form-control">
+                        <button type="submit" class="btn">Join</button>
+                    </div>
+                <!-- </form> -->
+            </div>
+            <div class="box-footer"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,400;0,600;0,800;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+:root {
+    --color-primary: #2b34cc;
+    --color-secondary: #79a0e2;
+    --color-dark: #141414;
+    --color-white: #EDEDED;
+    --sp-dark: #060606;
+    --sp-white: #e8e6e6;
+    --sp-red: #ce0929;
+    --sp-red-md: #d06876;
+    --sp-gray: #79797a;
+    --sp-gray-md: #9e9e9e;
+    --font-default: 16px;
+    --font-family: 'Maven Pro', 'Prompt', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: var(--font-family);
+}
+
+body {
+    font-size: var(--font-default);
+    background-color: var(--color-white);
+    background-image: url('../image/fundo.jpg');
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+footer {
+    background-color: var(--sp-dark);
+    background-image: url('../image/torcedores.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-origin: border-box;
+    height: 25vh;
+}
+
+.navbar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--sp-white);
+}
+
+.navbar--vertical {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar__menu {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__menu--first {
+    justify-content: flex-start;
+}
+
+.navbar__menu--last {
+    justify-content: flex-end;
+}
+
+.navbar__item {
+    text-align: center;
+    padding: .75rem;
+    letter-spacing: .1rem;
+}
+
+.navbar__brand {
+    font-family: 'Tangerine', cursive;
+    font-size: 2rem;
+    user-select: none;
+    color: var(--sp-dark);
+    float: right;
+    margin-left: .4rem;
+}
+
+sup {
+    font-family: 'Tangerine', cursive;
+    font-size: 1.25rem;
+    user-select: none;
+    color: var(--sp-dark);
+}
+
+.navbar__logo {
+    width: 3rem;
+}
+
+.navbar__link {
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--sp-dark);
+    background-color: transparent;
+}
+
+.navbar__link:hover {
+    color: var(--sp-gray);
+    background-color: transparent;
+}
+
+.header {
+    font-size: 2rem;
+    font-weight: 700;
+    font-stretch: extra-condensed;
+    letter-spacing: .2rem;
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+.paragraph {
+    font-size: 1.1rem;
+    letter-spacing: .05rem;
+    text-indent: 1rem;
+    text-overflow: ellipsis;
+    text-align: justify;
+    line-height: 1.2;
+}
+
+.image {
+    width: 15rem;
+    margin: .5rem;
+}
+
+.cup {
+    height: max-content;
+    width: 100%;
+    background-color: var(--sp-gray);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.about {
+    height: max-content;
+    width: 100%;
+    background-color: var(--sp-white);
+}
+
+.shop {
+    height: max-content;
+    width: 100%;
+    background-color: var(--sp-red);
+}
+
+.cast {
+    height: max-content;
+    width: 100%;
+    background-color: var(--sp-dark);
+}
+
+.card-container {
+    display: grid;
+    grid-auto-columns: auto;
+}
+
+.card {
+    width: 100%;
+    border: 2px solid var(--sp-gray);
+}
+
+@media (max-width: 275px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar__menu {
+        flex-direction: column;
+    }
+
+    .cup {
+        padding: .5rem;
+    }
+    
+    .about {
+        padding: .5rem;
+    }
+    
+    .shop {
+        padding: .5rem;
+    }
+    
+    .cast {
+        padding: .5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar__menu {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {}
+
+@media (max-width: 720px) {}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 1400px) {}
