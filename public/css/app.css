@@ -38,12 +38,13 @@ body {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
-main {
+/* main {
     display: grid;
     grid-template-columns: 1fr;
-}
+} */
 
 footer {
     background-color: var(--sp-dark);
@@ -175,16 +176,51 @@ sup {
 }
 
 .card-container {
-    display: grid;
-    grid-auto-columns: auto;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .card {
-    width: 100%;
-    border: 2px solid var(--sp-gray);
+    flex: 1 1 calc(250px - .5rem);
+    display: flex;
+    flex-flow: column nowrap;
+    width: calc(300px - 1rem);
+    height: calc(450px - 1rem);
+    border: 2px solid var(--sp-gray-md);
+    border-radius: 16px;
+    box-shadow: 0px 5px 20px var(--sp-gray);
+    margin: .5rem;
+    padding: .5rem;
 }
 
-@media (max-width: 275px) {
+.card__header {
+    border: 1px solid;
+    height: 15%;
+    margin-bottom: .5rem;
+    padding: .5rem;
+    border-radius: 16px;
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.card__body {
+    border: 1px solid;
+    height: 70%;
+    padding: .5rem;
+    border-radius: 16px;
+    font-size: 1.1rem;
+}
+
+.card__footer {
+    border: 1px solid;
+    height: 15%;
+    margin-top: .5rem;
+    padding: .5rem;
+    border-radius: 16px;
+}
+
+@media (min-width: 275px) and (max-width: 359.98px) {
     .navbar {
         justify-content: center;
     }
@@ -196,21 +232,21 @@ sup {
     .cup {
         padding: .5rem;
     }
-    
+
     .about {
         padding: .5rem;
     }
-    
+
     .shop {
         padding: .5rem;
     }
-    
+
     .cast {
         padding: .5rem;
     }
 }
 
-@media (max-width: 360px) {
+@media (min-width: 360px) and (max-width: 479.98px) {
     .navbar {
         justify-content: center;
     }
@@ -220,10 +256,10 @@ sup {
     }
 }
 
-@media (max-width: 480px) {}
+@media (min-width: 480px) and (max-width: 719.98px) {}
 
-@media (max-width: 720px) {}
+@media (min-width: 720px) and (max-width: 1023.98px) {}
 
-@media (max-width: 1024px) {}
+@media (min-width: 1024px) and (max-width: 1399.98px) {}
 
-@media (max-width: 1400px) {}
+@media (min-width: 1400px) and (max-width: 1599.98px) {}
