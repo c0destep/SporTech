@@ -25,6 +25,10 @@
     font-family: var(--font-family);
 }
 
+html {
+    scrollbar-width: thin;
+}
+
 body {
     font-size: var(--font-default);
     background-color: var(--color-white);
@@ -135,7 +139,7 @@ sup {
 .paragraph {
     font-size: 1.1rem;
     letter-spacing: .05rem;
-    text-indent: 1rem;
+    /* text-indent: 1rem; */
     text-overflow: ellipsis;
     text-align: justify;
     line-height: 1.2;
@@ -161,18 +165,21 @@ sup {
     height: max-content;
     width: 100%;
     background-color: var(--sp-white);
+    padding: 1rem;
 }
 
 .shop {
     height: max-content;
     width: 100%;
     background-color: var(--sp-red);
+    padding: 1rem;
 }
 
 .cast {
     height: max-content;
     width: 100%;
     background-color: var(--sp-dark);
+    padding: 1rem;
 }
 
 .card-container {
@@ -218,6 +225,33 @@ sup {
     margin-top: .5rem;
     padding: .5rem;
     border-radius: 16px;
+}
+
+.contact {
+    color: var(--sp-white);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.contact__item {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.contact__link {
+    width: 5rem;
+    height: 2.5rem;
+    padding: .5rem;
+    text-align: center;
+}
+
+.contact__link a {
+    text-decoration: none;
+    color: var(--sp-white);
 }
 
 @media (min-width: 275px) and (max-width: 359.98px) {
